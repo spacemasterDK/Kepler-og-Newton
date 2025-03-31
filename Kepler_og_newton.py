@@ -14,12 +14,12 @@ from IPython.display import display, Math
 
 # Målt_Diameter_2 = 359
 
-# Tabelværdi_diameter = 2*71492
+# Tabelværdi_radius = 71492
 
 # Tabelværdi_afstand_til_månen = 421.6*10**(3)
 
 
-def beregning_af_periode(Position_1, Position_2,tidspunkt_1, tidspunkt_2, Målt_Diameter_1, Målt_Diameter_2,Tabel_værdi_diameter, Tabelværdi_afstand_til_månen):
+def beregning_af_periode(Position_1, Position_2,tidspunkt_1, tidspunkt_2, Målt_Diameter_1, Målt_Diameter_2,Tabel_radius, Tabelværdi_afstand_til_månen):
     
     Radius_1 = Målt_Diameter_1/2
     Radius_2 = Målt_Diameter_2/2
@@ -28,9 +28,9 @@ def beregning_af_periode(Position_1, Position_2,tidspunkt_1, tidspunkt_2, Målt_
     Afstand_til_position_2 = Position_2-Radius_2
     
     
-    Vinkel_position_1 = np.arcsin(Afstand_til_position_1/Målt_Diameter_1*(Tabel_værdi_diameter/Tabelværdi_afstand_til_månen))*360/(2*np.pi)
+    Vinkel_position_1 = np.arcsin(Afstand_til_position_1/Målt_Diameter_1*(2*Tabel_radius/Tabelværdi_afstand_til_månen))*360/(2*np.pi)
     
-    Vinkel_position_2 = np.arcsin(Afstand_til_position_2/Målt_Diameter_2*(Tabel_værdi_diameter/Tabelværdi_afstand_til_månen))*360/(2*np.pi)
+    Vinkel_position_2 = np.arcsin(Afstand_til_position_2/Målt_Diameter_2*(2*Tabel_radius/Tabelværdi_afstand_til_månen))*360/(2*np.pi)
     
     relativ_vinkel = np.abs(Vinkel_position_1-Vinkel_position_2)
     
